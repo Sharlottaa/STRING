@@ -9,6 +9,11 @@
 #include <ctype.h>
 #include <memory.h>
 
+
+#define ASSERT_STRING(expected, got) assertString(expected, got, \
+__FILE__ , __FUNCTION__ , __LINE__ )
+
+
 //возвращает количество символов в строке (не считая ноль-символ)
 int strlen(const char *s);
 
