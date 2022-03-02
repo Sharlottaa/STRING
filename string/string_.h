@@ -9,12 +9,18 @@
 #include <ctype.h>
 #include <memory.h>
 
-
+#define MAX_STRING_SIZE 100
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
 
-//
+char _stringBuffer[ MAX_STRING_SIZE + 1];
+
+typedef struct WordDescriptor {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа слова
+} WordDescriptor;
+
 void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line);
 
 //возвращает количество символов в строке (не считая ноль-символ)
@@ -61,5 +67,11 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDesti
 
 //возвращает конец строки
 char* getEndOfString(char *begin);
+
+//Функция getWord вернёт значение 0, если слово не было считано, в противном
+//случае будет возвращено значение 1 и в переменную word типа WordDescriptor
+//будут записаны позиции начала слова, и первого символа после конца слова
+int getWord ( char * beginSearch , WordDescriptor * word ) ;
+
 
 #endif //PROJECT_STRING__H
