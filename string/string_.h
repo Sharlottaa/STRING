@@ -1,5 +1,5 @@
 //
-// Created by ну я on 25.02.2022.
+// Created by ну я on 01.03.2022.
 //
 
 #ifndef PROJECT_STRING__H
@@ -10,12 +10,15 @@
 #include <memory.h>
 
 
+
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
 
+//
+void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line);
 
 //возвращает количество символов в строке (не считая ноль-символ)
-int strlen(const char *s);
+size_t strlen( char *s);
 
 //возвращает указатель на первый элемент с кодом ch, расположенным на ленте памяти между
 //адресами begin и end не включая end. Если символ не найден, возвращается значение end.
@@ -55,5 +58,8 @@ char* copyIf(char *beginSource, const char *endSource, char *beginDestination, i
 //записывает по адресу beginDestination элементы из фрагмента памяти начиная с rbeginSource
 //заканчивая rendSource, удовлетворяющие функции-предикату f. Функция возвращает значение beginDestination по окончанию работы функции.
 char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int));
+
+//возвращает конец строки
+char* getEndOfString(char *begin);
 
 #endif //PROJECT_STRING__H

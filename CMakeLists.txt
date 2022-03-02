@@ -9,7 +9,9 @@ add_executable(project main.c)
 
 # создаём библиотеку
 add_library(str string/string_.h string/string_.c
+        string/tasks/removeNonLetters.h
         #string/tasks/digitToStartWithoutChangingTheOrder.h
+        string/tasks/removeExtraSpaces.h
         # string / tasks / reverseWords.h
         # string / tasks / replaceDigitsBySpaces.h
         # ...
