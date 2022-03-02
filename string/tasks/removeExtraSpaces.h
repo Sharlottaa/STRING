@@ -21,10 +21,35 @@ void removeExtraSpaces(char *s) {
     *destination = '\0';
 }
 
-void test_removeExtraSpaces() {
+void test_removeExtraSpaces1() {
     char s[] = "Hi        bro";
     removeExtraSpaces(s);
     ASSERT_STRING("Hi bro", s);
 }
 
+void test_removeExtraSpaces2() {
+    char s[] = "Hi      bro   ";
+    removeExtraSpaces(s);
+    ASSERT_STRING("Hi bro", s);
+}
+
+void test_removeExtraSpaces3() {
+    char s[] = "   Hi        bro";
+    removeExtraSpaces(s);
+    ASSERT_STRING("Hi bro", s);
+}
+
+void test_removeExtraSpaces4() {
+    char s[] = "Hibro   ";
+    removeExtraSpaces(s);
+    ASSERT_STRING("Hibro  ", s);
+}
+
+
+void test_removeExtraSpaces(){
+    test_removeExtraSpaces1();
+    test_removeExtraSpaces2();
+    test_removeExtraSpaces3();
+    test_removeExtraSpaces4();
+}
 #endif //PROJECT_REMOVEEXTRASPACES_H
