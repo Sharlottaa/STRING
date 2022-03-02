@@ -8,6 +8,7 @@
 #include <assert.h>
 #include <ctype.h>
 #include <memory.h>
+#include <stdbool.h>
 
 #define MAX_STRING_SIZE 100
 
@@ -71,7 +72,12 @@ char* getEndOfString(char *begin);
 //Функция getWord вернёт значение 0, если слово не было считано, в противном
 //случае будет возвращено значение 1 и в переменную word типа WordDescriptor
 //будут записаны позиции начала слова, и первого символа после конца слова
-int getWord ( char * beginSearch , WordDescriptor * word ) ;
+int getWord(char *beginSearch, WordDescriptor *word);
+
+//Функция getWord вернёт значение 0, если слово не было считано, в противном
+//случае будет возвращено значение 1
+//считывает слова с конца строки
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 
 #endif //PROJECT_STRING__H

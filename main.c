@@ -7,10 +7,15 @@ void test(){
     test_removeNonLetters();
     test_removeExtraSpaces();
     test_digitToStart();
+    test_LetterToStart();
 }
 
+
+
+
 int main() {
-    test_LetterToStart();
+
+
     return 0;
 }
 
