@@ -18,6 +18,9 @@ void removeExtraSpaces(char *s) {
         end = *s;
         s++;
     }
+    if (*destination == ' ') {
+        destination--;
+    }
     *destination = '\0';
 }
 
@@ -42,7 +45,7 @@ void test_removeExtraSpaces3() {
 void test_removeExtraSpaces4() {
     char s[] = "Hibro   ";
     removeExtraSpaces(s);
-    ASSERT_STRING("Hibro  ", s);
+    ASSERT_STRING("Hibro", s);
 }
 
 
