@@ -4,6 +4,7 @@
 #include "string\tasks\LetterToStart.h"
 #include "string\tasks\replacingNumbersWithSpaces.h"
 #include "string\tasks\replace.h"
+#include "string\tasks\ordered.h"
 
 void test(){
     test_removeNonLetters();
@@ -18,7 +19,7 @@ void test(){
 
 int main() {
 
-    test_changingWords_equalWordCount();
+    test_areWordsOrdered();
     return 0;
 }
 
