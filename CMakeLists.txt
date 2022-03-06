@@ -12,10 +12,11 @@ add_library(str string/string_.h string/string_.c
         string/tasks/removeNonLetters.h
         string/tasks/digitToStart.h
         string/tasks/LetterToStart.h
-        #string/tasks/digitToStartWithoutChangingTheOrder.h
+        string/tasks/replace.h
         string/tasks/removeExtraSpaces.h
+        string/tasks/replacingNumbersWithSpaces.h
         # string / tasks / reverseWords.h
-        # string / tasks / replaceDigitsBySpaces.h
+
         # ...
         # < файл с решением задачи >
         # ...

@@ -31,7 +31,6 @@ char *find(char *begin, const char *end, int ch) {
 }
 
 char *findNonSpace(char *begin) {
-    assert(*begin != '\0');
     while (*begin != '\0' && isspace(*begin)) {
         begin++;
     }
@@ -60,13 +59,10 @@ char *findSpaceReverse(char *rbegin, const char *rend) {
 }
 
 int strcmp(const char *lhs, const char *rhs) {
-    int f;
-    while (*lhs != '\0' && *rhs != '\0') {
-        f = *lhs - *rhs < 0 ? -1 : *lhs - *rhs > 0;
-        lhs++;
-        rhs++;
+    while (*lhs == *rhs && *lhs) {
+        lhs++, rhs++;
     }
-    return f;
+    return *rhs - *lhs;
 }
 
 char *copy(const char *beginSource, const char *endSource, char *beginDestination) {
