@@ -13,14 +13,15 @@ void test(){
     test_digitToStart();
     test_LetterToStart();
     test_replacingNumbersWithSpaces();
+    test_areWordsOrdered();
 }
 
 
 
 
 int main() {
+    test_reverseWordsBag();
 
-    test_areWordsOrdered();
     return 0;
 }
 

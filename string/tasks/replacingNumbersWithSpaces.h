@@ -27,6 +27,7 @@ void replacingNumbersWithSpaces(char *s) {
     *s = '\0';
 }
 
+
 void test_replacingNumbersWithSpaces1() {
     char s[] = "Hi3bro";
     replacingNumbersWithSpaces(s);
