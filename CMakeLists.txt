@@ -16,6 +16,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/removeExtraSpaces.h
         string/tasks/replacingNumbersWithSpaces.h
         string/tasks/ordered.h
+        string/tasks/Palindrome.h
         # string / tasks / reverseWords.h
 
         # ...

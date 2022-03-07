@@ -31,14 +31,15 @@ int getWordComma(char *beginSearch, WordDescriptor *word) {
 }
 
 bool isPalindromeWord(WordDescriptor word){
-    while (word.begin == word.end-- && word.begin / 2) {
-        word.begin++;
+    word.end--;
+    while (*word.begin == *word.end && word.begin < word.end ) {
+        word.end--,word.begin++;
     }
     return word.begin >= word.end;
 }
 
 int countPalindromeWords(char *s) {
-    int count;
+    int count=0;
     char *copyS = s;
     WordDescriptor word;
     while (getWordComma(copyS, &word)) {
@@ -48,6 +49,33 @@ int countPalindromeWords(char *s) {
         }
     }
     return count;
+}
+
+void test_countPalindromeWords1(){
+    char s[]="mam,i,love,u";
+    assert(countPalindromeWords(s)==3);
+}
+
+void test_countPalindromeWords2(){
+    char s[]="mam,ded,ba";
+    assert(countPalindromeWords(s)==2);
+}
+
+void test_countPalindromeWords3(){
+    char s[]="sos,appa,f";
+    assert(countPalindromeWords(s)==3);
+}
+
+void test_countPalindromeWords4(){
+    char s[]="sos";
+    assert(countPalindromeWords(s)==1);
+}
+
+void test_countPalindromeWords(){
+    test_countPalindromeWords1();
+    test_countPalindromeWords2();
+    test_countPalindromeWords3();
+    test_countPalindromeWords4();
 }
 
 #endif //PROJECT_PALINDROME_H

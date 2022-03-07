@@ -6,6 +6,7 @@
 #include "string\tasks\replace.h"
 #include "string\tasks\ordered.h"
 #include "string\tasks\getBagOfWords.h"
+#include "string\tasks\Palindrome.h"
 
 void test(){
     test_removeNonLetters();
@@ -14,14 +15,15 @@ void test(){
     test_LetterToStart();
     test_replacingNumbersWithSpaces();
     test_areWordsOrdered();
+    test_reverseWordsBag();
 }
 
 
 
 
 int main() {
-    test_reverseWordsBag();
 
+    test_countPalindromeWords();
     return 0;
 }
 
