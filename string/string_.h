@@ -94,4 +94,15 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 //получает позиции начала и конца каждого слова строки
 void getBagOfWords(BagOfWords *bag, char *s);
+
+//возвращает указатель на первый символ, отличный от запятых, расположенный на ленте памяти,
+// начиная с begin и заканчивая ноль-символом.
+// Если символ не найден, возвращается адрес первого ноль-символа.
+char* findNonComma(char *begin);
+
+//возвращает указатель на первая запятая, расположенный на ленте памяти начиная с адреса begin
+//или на первый ноль-символ
+char* findComma(char *begin);
+
+int getWordComma(char *beginSearch, WordDescriptor *word);
 #endif //PROJECT_STRING__H
