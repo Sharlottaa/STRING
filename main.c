@@ -5,6 +5,7 @@
 #include "string\tasks\replacingNumbersWithSpaces.h"
 #include "string\tasks\replace.h"
 #include "string\tasks\ordered.h"
+#include "string\tasks\getBagOfWords.h"
 
 void test(){
     test_removeNonLetters();
