@@ -7,7 +7,7 @@
 
 #include "../string_.h"
 
-char *mixTwoStrings(char *s, char *string1, char *string2) {
+void mixTwoStrings(char *s, char *string1, char *string2) {
     WordDescriptor word1, word2;
     bool isW1Found, isW2Found;
     char *copyS = s;
@@ -17,37 +17,58 @@ char *mixTwoStrings(char *s, char *string1, char *string2) {
             isW1Found || isW2Found) {
         if (isW1Found) {
             copyS = copy(word1.begin, word1.end, copyS);
-            beginSearch1 = word1.end;
             *copyS++ = ' ';
+            beginSearch1 = word1.end;
         } else if (isW2Found) {
             copyS = copy(word2.begin, word2.end, copyS);
-            beginSearch2 = word2.end;
             *copyS++ = ' ';
+            beginSearch2 = word2.end;
         }
     }
-    if (*copyS != *s) {
+    if (copyS != s) {
         copyS--;
     }
-    return copyS;
+    *copyS='\0';
+
 }
 
 void test_mixTwoStrings1() {
     char s[MAX_STRING_SIZE];
     char s1[] = "a n";
     char s2[] = "g j";
-    ASSERT_STRING("a g n j", mixTwoStrings(s,s1, s2));
+    mixTwoStrings(s,s1, s2);
+    ASSERT_STRING("a n g j",s );
 }
 
 void test_mixTwoStrings2() {
     char s[MAX_STRING_SIZE];
     char s1[] = "mama eto mir";
     char s2[] = "deda i ba toge";
-    ASSERT_STRING("mama deda eto i ba mir toge", mixTwoStrings(s,s1, s2));
+    mixTwoStrings(s,s1, s2);
+    ASSERT_STRING("mama eto mir deda i ba toge",s);
+}
+
+void test_mixTwoStrings3() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "opa";
+    char s2[] = "op";
+    mixTwoStrings(s,s1, s2);
+    ASSERT_STRING("opa op",s);
+}
+
+void test_mixTwoStrings4() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "Ivan";
+    char s2[] = "Sergeevich";
+    mixTwoStrings(s,s1, s2);
+    ASSERT_STRING("Ivan Sergeevich",s);
 }
 
 void test_mixTwoStrings(){
     test_mixTwoStrings1();
     test_mixTwoStrings2();
+    test_mixTwoStrings3();
+    test_mixTwoStrings4();
 }
 
 #endif //PROJECT_MIXTWOSTRINGS_H

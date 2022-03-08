@@ -8,6 +8,7 @@
 #include "string\tasks\getBagOfWords.h"
 #include "string\tasks\Palindrome.h"
 #include "string\tasks\mixTwoStrings.h"
+#include "string\tasks\reverseEheOrderOfWordsinString.h"
 
 void test(){
     test_removeNonLetters();
@@ -18,13 +19,14 @@ void test(){
     test_areWordsOrdered();
     test_reverseWordsBag();
     test_countPalindromeWords();
+    test_mixTwoStrings();
 }
 
 
 
 
 int main() {
-    test_mixTwoStrings();
+    test_reverseEndOrderOfWordsInString();
 
     return 0;
 }

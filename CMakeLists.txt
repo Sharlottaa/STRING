@@ -18,6 +18,7 @@ add_library(str string/string_.h string/string_.c
         string/tasks/ordered.h
         string/tasks/Palindrome.h
         string/tasks/mixTwoStrings.h
+        string/tasks/reverseEheOrderOfWordsinString.h
         # string / tasks / reverseWords.h
 
         # ...
